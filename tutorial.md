@@ -40,7 +40,6 @@ Chúng ta bắt đầu tạo components gồm các file, cụ thể: *Todolist.j
 todolist
 |_____node_modules
 |_____public
-
 |  |_____favicon.ico
 |  |_____index.html
 |  |_____logo192.png
