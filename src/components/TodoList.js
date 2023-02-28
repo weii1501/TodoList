@@ -3,32 +3,11 @@ import TodoForm from './TodoForm'
 import Todo from './Todo'
 import { HTML5Backend } from 'react-dnd-html5-backend'
 import { DndProvider } from 'react-dnd'
-import update from "immutability-helper";
+import update from 'immutability-helper';
 
 function Todolist() {
-    const itemColor = [
-        'linear-gradient(90deg, rgba(93, 12, 255, 1) 0%, rgba(155, 0, 250, 1) 100%)',
-        'linear-gradient(90deg, rgba(255, 12, 241, 1) 0%, rgba(250, 0, 135, 1) 100%)',
-        'linear-gradient(90deg,rgba(20, 159, 255, 1) 0%,rgba(17, 122, 255, 1) 100%)'
-    ]
 
-    const [todos, setTodos] = useState([
-        // {
-        //     id:'1231',
-        //     text:'aaaaa',
-        //     bg: itemColor[0],
-        // },
-        // {
-        //     id:'6456',
-        //     text:'bbbbbbb',
-        //     bg: itemColor[1],
-        // },
-        // {
-        //     id:'6756',
-        //     text:'ccccccc',
-        //     bg: itemColor[2],
-        // }
-    ])
+    const [todos, setTodos] = useState([])
 
     const addTodo = todo => {
         if (!todo.text || /^\s*$/.test(todo.text)) {
@@ -44,7 +23,7 @@ function Todolist() {
 
     const completeTodo = id => {
         let updatedTodos = todos.map(todo => {
-            if (todo.id ===id) {
+            if (todo.id === id) {
                 todo.isComplete = !todo.isComplete
             }
             return todo
@@ -83,7 +62,7 @@ function Todolist() {
                 todos={todos}
             />
             <DndProvider backend={HTML5Backend}>
-                <ul className="characters" >
+                <ul className="container" >
                     <Todo
                         todos={todos}
                         completeTodo={completeTodo}

@@ -2,6 +2,8 @@ import React, { useState, useEffect, useRef } from 'react'
 
 
 function TodoForm(props) {
+    const [input, setInput] = useState(props.edit ? props.edit.value : '');
+
     const itemColor = [
         'linear-gradient(90deg, rgba(93, 12, 255, 1) 0%, rgba(155, 0, 250, 1) 100%)',
         'linear-gradient(90deg, rgba(255, 12, 241, 1) 0%, rgba(250, 0, 135, 1) 100%)',
@@ -10,8 +12,6 @@ function TodoForm(props) {
     ]
 
     //console.log(props.todos)
-
-    const [input, setInput] = useState('')
 
     const inputRef = useRef(null)
 
@@ -26,14 +26,12 @@ function TodoForm(props) {
 
     const handleSubmit = e => {
         e.preventDefault()
-        const num = props.todos.length % 4
+        const num = props.todos ? (props.todos.length % 4) : (Math.floor(Math.random()*4))
         const color = itemColor[num]
-        const order = props.todos.length
         props.onSubmit({
             id: Math.floor(Math.random()*10000).toString(),
             text: input,
             bg: color,
-            order: order
         })
         setInput('')
     }
