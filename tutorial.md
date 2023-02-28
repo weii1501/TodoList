@@ -1156,3 +1156,7 @@ function TodoItem({todo, onSubmitUpdate, onRemoveTodo, onSetEdit, onCompleteTodo
 export default TodoItem
 ```
 
+## Kết luận
+Như vậy tôi đã trình bày cho các bạn cách làm một `TodoList` đơn giản. Mình cũng mới làm việc với Reactjs nên có nhiều thiếu xót mong các bạn sẽ góp ý cho mình về bài viết cũng như những kinh nghiệm làm việc với công nghệ này nhé. Tạm biệt và chúc các bạn thành công!
+
+Github: https://github.com/weii1501/TodoList.git
